@@ -213,11 +213,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}}",
           "range": true,
           "refId": "A"
         },
@@ -228,12 +228,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}}",
           "range": true,
           "refId": "B"
         }
@@ -352,11 +352,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}}",
           "range": true,
           "refId": "A"
         },
@@ -367,12 +367,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}}",
           "range": true,
           "refId": "B"
         }
@@ -491,11 +491,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}}",
           "range": true,
           "refId": "A"
         },
@@ -506,12 +506,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
           "format": "time_series",
-          "hide": true,
+          "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}}",
           "range": true,
           "refId": "B"
         }
@@ -1103,7 +1103,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1343,7 +1344,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1523,7 +1525,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1645,7 +1648,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1767,7 +1771,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1888,7 +1893,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1992,7 +1998,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2097,7 +2104,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2261,7 +2269,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2465,7 +2474,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2673,7 +2683,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2881,7 +2892,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3114,7 +3126,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3219,7 +3232,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3303,7 +3317,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3828,6 +3843,35 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "Basic",
+          "value": ""
+        },
+        "description": "Level of telemetry metrics - detailed level must explicitly configured on the collector level. Detailed adds grouping by transport protocol (http/grpc) for receivers. ",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Metric level",
+        "multi": false,
+        "name": "level",
+        "options": [
+          {
+            "selected": true,
+            "text": "Basic",
+            "value": ""
+          },
+          {
+            "selected": false,
+            "text": "Detailed",
+            "value": ",transport"
+          }
+        ],
+        "query": "Basic :  , Detailed : \\,transport",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
       }
     ]
   },
@@ -3863,6 +3907,6 @@
   "timezone": "utc",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 68,
+  "version": 69,
   "weekStart": ""
 }
