@@ -27,7 +27,7 @@ receivers:
       - job_name: otel-collector-metrics
         scrape_interval: 10s
         static_configs:
-          - targets: ['localhost:8888']
+          - targets: ['127.0.0.1:8888']
 
 exporters:
   prometheusremotewrite/aws:
@@ -48,8 +48,8 @@ service:
       exporters: [awsprometheusremotewrite]
   telemetry:
     metrics:
-      address: 0.0.0.0:8888
-      level: basic
+      address: 127.0.0.1:8888
+      level: detailed
 ```
 
 ## Grafana dashboard for OpenTelemetry collector metrics
