@@ -10,7 +10,8 @@ port on a public interface instead of just locally.
 service:
   telemetry:
     metrics:
-      address: ":8888"
+      address: 127.0.0.1:8888
+      level: detailed   
 ```
 
 Collector can scrape own metric via own metric pipeline, so real configuration 
