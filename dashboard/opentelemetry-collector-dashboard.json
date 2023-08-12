@@ -186,7 +186,7 @@
         "y": 1
       },
       "id": 28,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -213,11 +213,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}} {{transport}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -228,12 +228,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_spans{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}} {{transport}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
@@ -325,7 +325,7 @@
         "y": 1
       },
       "id": 32,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -352,11 +352,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}} {{transport}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -367,12 +367,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_metric_points{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}} {{transport}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
@@ -464,7 +464,7 @@
         "y": 1
       },
       "id": 47,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -491,11 +491,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_accepted_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_accepted_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{receiver}} {{transport}}",
+          "legendFormat": "Accepted: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -506,12 +506,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_receiver_refused_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $level)",
+          "expr": "sum(${metric:value}(otelcol_receiver_refused_log_records{receiver=~\"$receiver\"}[$__rate_interval])) by (receiver $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Refused: {{receiver}} {{transport}}",
+          "legendFormat": "Refused: {{receiver}} {{transport}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
@@ -644,7 +644,7 @@
         "y": 10
       },
       "id": 35,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -675,7 +675,7 @@
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{processor}}",
+          "legendFormat": "Accepted: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -686,7 +686,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_refused_spans{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_refused_spans{processor=~\"$processor\"}[$__rate_interval])) by (processor $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
@@ -702,12 +702,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_dropped_spans{processor=~\"$processor\"}[$__interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_dropped_spans{processor=~\"$processor\"}[$__interval])) by (processor $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Dropped: {{processor}}",
+          "legendFormat": "Dropped: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "C"
         }
@@ -814,7 +814,7 @@
         "y": 10
       },
       "id": 50,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -841,11 +841,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_accepted_metric_points{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_accepted_metric_points{processor=~\"$processor\"}[$__rate_interval])) by (processor $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{processor}}",
+          "legendFormat": "Accepted: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -856,7 +856,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_refused_metric_points{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_refused_metric_points{processor=~\"$processor\"}[$__rate_interval])) by (processor $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
@@ -877,7 +877,7 @@
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Dropped: {{processor}}",
+          "legendFormat": "Dropped: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "C"
         }
@@ -984,7 +984,7 @@
         "y": 10
       },
       "id": 51,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1011,11 +1011,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_accepted_log_records{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_accepted_log_records{processor=~\"$processor\"}[$__rate_interval])) by (processor $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Accepted: {{processor}}",
+          "legendFormat": "Accepted: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -1026,7 +1026,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_refused_log_records{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_refused_log_records{processor=~\"$processor\"}[$__rate_interval])) by (processor $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
@@ -1047,7 +1047,7 @@
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Dropped: {{processor}}",
+          "legendFormat": "Dropped: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "C"
         }
@@ -1154,7 +1154,7 @@
         "y": 18
       },
       "id": 36,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1238,7 +1238,7 @@
         "y": 18
       },
       "id": 49,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "maxDataPoints": 50,
       "options": {
@@ -1274,7 +1274,7 @@
           "reverse": false
         }
       },
-      "pluginVersion": "9.5.3-cloud.2.0cb5a501",
+      "pluginVersion": "9.5.3",
       "targets": [
         {
           "datasource": {
@@ -1395,7 +1395,7 @@
         "y": 18
       },
       "id": 56,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1545,7 +1545,7 @@
         "y": 27
       },
       "id": 37,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1572,11 +1572,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_sent_spans{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_sent_spans{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Sent: {{exporter}}",
+          "legendFormat": "Sent: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -1587,12 +1587,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_spans{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_spans{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Enqueue: {{exporter}}",
+          "legendFormat": "Enqueue: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
@@ -1668,7 +1668,7 @@
         "y": 27
       },
       "id": 38,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1695,11 +1695,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_sent_metric_points{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_sent_metric_points{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Sent: {{exporter}}",
+          "legendFormat": "Sent: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -1710,12 +1710,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_metric_points{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_metric_points{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Enqueue: {{exporter}}",
+          "legendFormat": "Enqueue: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
@@ -1791,7 +1791,7 @@
         "y": 27
       },
       "id": 48,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -1818,11 +1818,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_sent_log_records{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_sent_log_records{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Sent: {{exporter}}",
+          "legendFormat": "Sent: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -1833,17 +1833,17 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_log_records{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter)",
+          "expr": "sum(${metric:value}(otelcol_exporter_enqueue_failed_log_records{exporter=~\"$exporter\"}[$__rate_interval])) by (exporter $grouping)",
           "format": "time_series",
           "hide": false,
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Enqueue: {{exporter}}",
+          "legendFormat": "Enqueue: {{exporter}} {{service_instance_id}}",
           "range": true,
           "refId": "B"
         }
       ],
-      "title": "Logs Records ${metric:text}",
+      "title": "Log Records ${metric:text}",
       "type": "timeseries"
     },
     {
@@ -2155,7 +2155,7 @@
         "y": 36
       },
       "id": 46,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -2359,7 +2359,7 @@
         "y": 46
       },
       "id": 40,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -2564,7 +2564,7 @@
         "y": 46
       },
       "id": 52,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -2773,7 +2773,7 @@
         "y": 46
       },
       "id": 53,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -3006,7 +3006,7 @@
         "y": 55
       },
       "id": 39,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -3146,7 +3146,7 @@
         "y": 55
       },
       "id": 41,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -3252,7 +3252,7 @@
         "y": 55
       },
       "id": 54,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "legend": {
@@ -3337,7 +3337,7 @@
         "y": 64
       },
       "id": 57,
-      "interval": "",
+      "interval": "$minstep",
       "links": [],
       "options": {
         "cellHeight": "sm",
@@ -3351,7 +3351,7 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "9.5.3-cloud.2.0cb5a501",
+      "pluginVersion": "9.5.3",
       "targets": [
         {
           "datasource": {
@@ -3642,7 +3642,6 @@
         "y": 79
       },
       "id": 45,
-      "isNew": true,
       "links": [],
       "options": {
         "code": {
@@ -3653,7 +3652,7 @@
         "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md#metrics\">OTEL collector troubleshooting (how to enable telemetry metrics)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/scaling/\">Scaling the Collector (metrics to watch)</a> | \n<a target=\"_blank\" href=\"https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/\">Installed from Grafana.com dashboards</a>",
         "mode": "html"
       },
-      "pluginVersion": "9.5.3-cloud.2.0cb5a501",
+      "pluginVersion": "9.5.3",
       "targets": [
         {
           "datasource": {
@@ -3667,7 +3666,7 @@
       "type": "text"
     }
   ],
-  "refresh": "",
+  "refresh": false,
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -3847,28 +3846,33 @@
       {
         "current": {
           "selected": true,
-          "text": "Basic",
+          "text": "None (basic metrics)",
           "value": ""
         },
-        "description": "Level of telemetry metrics - detailed level must explicitly configured on the collector level. Detailed adds grouping by transport protocol (http/grpc) for receivers. ",
+        "description": "Detailed metrics must be configured in the collector configuration. They add grouping by transport protocol (http/grpc) for receivers. ",
         "hide": 0,
         "includeAll": false,
-        "label": "Metric level",
+        "label": "Additional groupping",
         "multi": false,
-        "name": "level",
+        "name": "grouping",
         "options": [
           {
             "selected": true,
-            "text": "Basic",
+            "text": "None (basic metrics)",
             "value": ""
           },
           {
             "selected": false,
-            "text": "Detailed",
+            "text": "By transport (detailed metrics)",
             "value": ",transport"
+          },
+          {
+            "selected": false,
+            "text": "By service instance id",
+            "value": ",service_instance_id"
           }
         ],
-        "query": "Basic :  , Detailed : \\,transport",
+        "query": "None (basic metrics) :  , By transport (detailed metrics) : \\,transport, By service instance id : \\,service_instance_id",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -3907,6 +3911,6 @@
   "timezone": "utc",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 70,
+  "version": 71,
   "weekStart": ""
 }
