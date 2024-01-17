@@ -1483,7 +1483,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_batch_timeout_trigger_send{processor=~\"$processor\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_batch_timeout_trigger_send{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (processor)",
           "format": "time_series",
           "hide": false,
           "instant": false,
