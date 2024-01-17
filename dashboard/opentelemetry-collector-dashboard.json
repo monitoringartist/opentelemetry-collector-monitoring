@@ -6,7 +6,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.1.5"
+      "version": "10.2.3"
     },
     {
       "type": "panel",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.88.0)",
+  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.92.0)",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 15983,
@@ -114,6 +114,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -258,6 +259,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -402,6 +404,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -572,6 +575,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -751,6 +755,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -930,6 +935,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1102,6 +1108,94 @@
         "type": "prometheus",
         "uid": "$datasource"
       },
+      "description": "Number of units in the batch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "links": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 18
+      },
+      "id": 49,
+      "interval": "$minstep",
+      "links": [],
+      "maxDataPoints": 50,
+      "options": {
+        "calculate": false,
+        "cellGap": 1,
+        "color": {
+          "exponent": 0.5,
+          "fill": "dark-orange",
+          "mode": "scheme",
+          "reverse": true,
+          "scale": "exponential",
+          "scheme": "Reds",
+          "steps": 57
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": true
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "tooltip": {
+          "show": true,
+          "showColorScale": false,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": false
+        }
+      },
+      "pluginVersion": "10.2.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(otelcol_processor_batch_batch_send_size_bucket{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (le)",
+          "format": "heatmap",
+          "hide": false,
+          "instant": false,
+          "interval": "$minstep",
+          "intervalFactor": 1,
+          "legendFormat": "{{le}}",
+          "refId": "B"
+        }
+      ],
+      "title": "Batch Send Size Heatmap",
+      "type": "heatmap"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1109,6 +1203,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1193,7 +1288,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 0,
+        "x": 8,
         "y": 18
       },
       "id": 36,
@@ -1250,95 +1345,8 @@
           "refId": "A"
         }
       ],
-      "title": "Batch Metrics",
+      "title": "Batch Metrics 1",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$datasource"
-      },
-      "description": "Number of units in the batch",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          },
-          "links": []
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 18
-      },
-      "id": 49,
-      "interval": "$minstep",
-      "links": [],
-      "maxDataPoints": 50,
-      "options": {
-        "calculate": false,
-        "cellGap": 1,
-        "color": {
-          "exponent": 0.5,
-          "fill": "dark-orange",
-          "mode": "scheme",
-          "reverse": true,
-          "scale": "exponential",
-          "scheme": "Reds",
-          "steps": 57
-        },
-        "exemplars": {
-          "color": "rgba(255,0,255,0.7)"
-        },
-        "filterValues": {
-          "le": 1e-9
-        },
-        "legend": {
-          "show": true
-        },
-        "rowsFrame": {
-          "layout": "auto"
-        },
-        "tooltip": {
-          "show": true,
-          "yHistogram": false
-        },
-        "yAxis": {
-          "axisPlacement": "left",
-          "reverse": false
-        }
-      },
-      "pluginVersion": "10.1.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$datasource"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum(increase(otelcol_processor_batch_batch_send_size_bucket{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (le)",
-          "format": "heatmap",
-          "hide": false,
-          "instant": false,
-          "interval": "$minstep",
-          "intervalFactor": 1,
-          "legendFormat": "{{le}}",
-          "refId": "B"
-        }
-      ],
-      "title": "Batch Send Size Heatmap",
-      "type": "heatmap"
     },
     {
       "datasource": {
@@ -1352,6 +1360,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1467,7 +1476,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_batch_batch_size_trigger_send{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_batch_batch_size_trigger_send${suffix}{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (processor)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1483,7 +1492,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(${metric:value}(otelcol_processor_batch_timeout_trigger_send{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (processor)",
+          "expr": "sum(${metric:value}(otelcol_processor_batch_timeout_trigger_send${suffix}{processor=~\"$processor\",job=\"$job\"}[$__rate_interval])) by (processor)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1493,7 +1502,7 @@
           "refId": "A"
         }
       ],
-      "title": "Batch Metrics",
+      "title": "Batch Metrics 2",
       "type": "timeseries"
     },
     {
@@ -1534,6 +1543,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1694,6 +1704,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1854,6 +1865,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2014,6 +2026,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2120,6 +2133,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2252,6 +2266,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2462,6 +2477,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2672,6 +2688,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -2882,6 +2899,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -3089,6 +3107,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -3198,6 +3217,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -3354,7 +3374,7 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.3",
       "targets": [
         {
           "datasource": {
@@ -3968,7 +3988,7 @@
         "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md#metrics\">OTEL collector troubleshooting (how to enable telemetry metrics)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/scaling/\">Scaling the Collector (metrics to watch)</a> | \n<a target=\"_blank\" href=\"https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/\">Installed from Grafana.com dashboards</a>",
         "mode": "html"
       },
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.3",
       "targets": [
         {
           "datasource": {
@@ -3983,8 +4003,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 38,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [
     "opentelemetry",
     "monitoringartist"
@@ -4291,6 +4310,6 @@
   "timezone": "utc",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 74,
+  "version": 75,
   "weekStart": ""
 }
