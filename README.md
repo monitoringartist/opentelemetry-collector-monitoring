@@ -79,54 +79,54 @@ groups:
         annotations:
           summary: Some metric points have been dropped by processor
           description: Maybe collector has received non standard metric points or it reached some limits
-    - alert: receiver-refused-spans
-      expr: sum(rate(otelcol_receiver_refused_spans{}[1m])) > 0
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: Some spans have been refused by receiver
-        description: Maybe collector has received non standard spans or it reached some limits
-    - alert: receiver-refused-metrics
-      expr: sum(rate(otelcol_receiver_refused_metric_points{}[1m])) > 0
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: Some metric points have been refused by receiver
-        description: Maybe collector has received non standard metric points or it reached some limits
-    - alert: exporter-enqueued-spans
-      expr: sum(rate(otelcol_exporter_enqueue_failed_spans{}[1m])) > 0
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: Some spans have been enqueued by exporter
-        description: Maybe used destination has a problem or used payload is not correct
-    - alert: exporter-enqueued-metrics
-      expr: sum(rate(otelcol_exporter_enqueue_failed_metric_points{}[1m])) > 0
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: Some metric points have been enqueued by exporter
-        description: Maybe used destination has a problem or used payload is not correct
-    - alert: exporter-failed-requests
-      expr: sum(rate(otelcol_exporter_send_failed_requests{}[1m])) > 0
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: Some exporter requests failed
-        description: Maybe used destination has a problem or used payload is not correct
-    - alert: high-cpu-usage
-      expr: max(rate(otelcol_process_cpu_seconds{}[1m])*100) > 90
-      for: 5m
-      labels:
-        severity: critical
-      annotations:
-        summary: High max CPU usage
-        description: Collector need to scale up
+      - alert: receiver-refused-spans
+        expr: sum(rate(otelcol_receiver_refused_spans{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some spans have been refused by receiver
+          description: Maybe collector has received non standard spans or it reached some limits
+      - alert: receiver-refused-metrics
+        expr: sum(rate(otelcol_receiver_refused_metric_points{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some metric points have been refused by receiver
+          description: Maybe collector has received non standard metric points or it reached some limits
+      - alert: exporter-enqueued-spans
+        expr: sum(rate(otelcol_exporter_enqueue_failed_spans{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some spans have been enqueued by exporter
+          description: Maybe used destination has a problem or used payload is not correct
+      - alert: exporter-enqueued-metrics
+        expr: sum(rate(otelcol_exporter_enqueue_failed_metric_points{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some metric points have been enqueued by exporter
+          description: Maybe used destination has a problem or used payload is not correct
+      - alert: exporter-failed-requests
+        expr: sum(rate(otelcol_exporter_send_failed_requests{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some exporter requests failed
+          description: Maybe used destination has a problem or used payload is not correct
+      - alert: high-cpu-usage
+        expr: max(rate(otelcol_process_cpu_seconds{}[1m])*100) > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: High max CPU usage
+          description: Collector need to scale up
 ```
 
 ## Documentation
