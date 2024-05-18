@@ -67,7 +67,7 @@
       }
     ]
   },
-  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.98.0)",
+  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.100.0)",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 15983,
@@ -3766,6 +3766,640 @@
         "x": 0,
         "y": 79
       },
+      "id": 68,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs. GRPC status codes: https://grpc.github.io/grpc/core/md_doc_statuscodes.html",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0"
+                },
+                "properties": [
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "0 - OK"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "1 - CANCELLED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "2"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "2 - UNKNOWN"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "3"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "3 - INVALID_ARGUMENT"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "4"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "4 - DEADLINE_EXCEEDED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "5 - NOT_FOUND"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "6"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "6 - ALREADY_EXISTS"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "7"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "7 - PERMISSION_DENIED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "8"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "8 - RESOURCE_EXHAUSTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "9"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "9 - FAILED_PRECONDITION"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "10 - ABORTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "11"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "11 - OUT_OF_RANGE"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "12"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "12 - UNIMPLEMENTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "13"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "13 - INTERNAL"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "14"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "14 - UNAVAILABLE"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "15"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "15 - DATA_LOSS"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "16"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "16 - UNAUTHENTICATED"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 80
+          },
+          "id": 69,
+          "interval": "$minstep",
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "max",
+                "mean"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "expr": "sum by(rpc_grpc_status_code) (${metric:value}(otelcol_rpc_server_responses_per_rpc_count{}[$__rate_interval]))",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "RPC server responses by GRPC status code (receivers)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs. GRPC status codes: https://grpc.github.io/grpc/core/md_doc_statuscodes.html",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0"
+                },
+                "properties": [
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "0 - OK"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "1 - CANCELLED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "2"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "2 - UNKNOWN"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "3"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "3 - INVALID_ARGUMENT"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "4"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "4 - DEADLINE_EXCEEDED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "5 - NOT_FOUND"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "6"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "6 - ALREADY_EXISTS"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "7"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "7 - PERMISSION_DENIED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "8"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "8 - RESOURCE_EXHAUSTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "9"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "9 - FAILED_PRECONDITION"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "10 - ABORTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "11"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "11 - OUT_OF_RANGE"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "12"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "12 - UNIMPLEMENTED"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "13"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "13 - INTERNAL"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "14"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "14 - UNAVAILABLE"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "15"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "15 - DATA_LOSS"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "16"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "16 - UNAUTHENTICATED"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 80
+          },
+          "id": 70,
+          "interval": "$minstep",
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "max",
+                "mean"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "expr": "sum by(rpc_grpc_status_code) (${metric:value}(otelcol_rpc_client_responses_per_rpc_count{}[$__rate_interval]))",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "RPC client responses by GRPC status code (exporters)",
+          "type": "timeseries"
+        }
+      ],
+      "title": "RPC server/client",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 80
+      },
       "id": 63,
       "panels": [
         {
@@ -3855,7 +4489,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 80
+            "y": 88
           },
           "id": 64,
           "interval": "$minstep",
@@ -3981,7 +4615,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 80
+            "y": 88
           },
           "id": 65,
           "interval": "$minstep",
@@ -4066,7 +4700,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 81
       },
       "id": 66,
       "panels": [],
@@ -4084,7 +4718,7 @@
         "h": 3,
         "w": 24,
         "x": 0,
-        "y": 81
+        "y": 82
       },
       "id": 45,
       "links": [],
@@ -4094,7 +4728,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md#metrics\">OTEL collector troubleshooting (how to enable telemetry metrics)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/scaling/\">Scaling the Collector (metrics to watch)</a> | \n<a target=\"_blank\" href=\"https://www.otelbin.io/\">OTelBin (OpenTelemetry collector configuration tool)</a> | \n<a target=\"_blank\" href=\"https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/\">Installed from Grafana.com dashboards</a>",
+        "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md#metrics\">OTEL collector troubleshooting (how to enable telemetry metrics)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/scaling/\">Scaling the Collector (metrics to watch)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/internal-telemetry/\">Collector internal telemetry</a> | \n<a target=\"_blank\" href=\"https://www.otelbin.io/\">OTelBin (OpenTelemetry collector configuration tool)</a> | \n<a target=\"_blank\" href=\"https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/\">Installed from Grafana.com dashboards</a>",
         "mode": "html"
       },
       "pluginVersion": "10.2.3",
@@ -4432,6 +5066,6 @@
   "timezone": "",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 80,
+  "version": 81,
   "weekStart": ""
 }
