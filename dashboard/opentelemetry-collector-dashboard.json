@@ -67,7 +67,7 @@
       }
     ]
   },
-  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.100.0)",
+  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.101.0)",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 15983,
@@ -4387,6 +4387,362 @@
           ],
           "title": "RPC client responses by GRPC status code (exporters)",
           "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 89
+          },
+          "id": 72,
+          "interval": "$minstep",
+          "links": [],
+          "maxDataPoints": 50,
+          "options": {
+            "calculate": false,
+            "cellGap": 1,
+            "color": {
+              "exponent": 0.5,
+              "fill": "dark-orange",
+              "mode": "scheme",
+              "reverse": true,
+              "scale": "exponential",
+              "scheme": "Reds",
+              "steps": 25
+            },
+            "exemplars": {
+              "color": "rgba(255,0,255,0.7)"
+            },
+            "filterValues": {
+              "le": 1e-9
+            },
+            "legend": {
+              "show": true
+            },
+            "rowsFrame": {
+              "layout": "auto"
+            },
+            "tooltip": {
+              "show": true,
+              "showColorScale": false,
+              "yHistogram": false
+            },
+            "yAxis": {
+              "axisPlacement": "left",
+              "reverse": false,
+              "unit": "ms"
+            }
+          },
+          "pluginVersion": "10.1.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(increase(otelcol_rpc_server_duration_bucket{rpc_grpc_status_code=\"8\"}[$__rate_interval])) by (le)",
+              "format": "heatmap",
+              "hide": false,
+              "instant": false,
+              "interval": "$minstep",
+              "intervalFactor": 1,
+              "legendFormat": "{{le}}",
+              "refId": "B"
+            }
+          ],
+          "title": "RPC server duration (receivers)",
+          "type": "heatmap"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 89
+          },
+          "id": 74,
+          "interval": "$minstep",
+          "links": [],
+          "maxDataPoints": 50,
+          "options": {
+            "calculate": false,
+            "cellGap": 1,
+            "color": {
+              "exponent": 0.5,
+              "fill": "dark-orange",
+              "mode": "scheme",
+              "reverse": true,
+              "scale": "exponential",
+              "scheme": "Reds",
+              "steps": 25
+            },
+            "exemplars": {
+              "color": "rgba(255,0,255,0.7)"
+            },
+            "filterValues": {
+              "le": 1e-9
+            },
+            "legend": {
+              "show": true
+            },
+            "rowsFrame": {
+              "layout": "auto"
+            },
+            "tooltip": {
+              "show": true,
+              "showColorScale": false,
+              "yHistogram": false
+            },
+            "yAxis": {
+              "axisPlacement": "left",
+              "reverse": false,
+              "unit": "ms"
+            }
+          },
+          "pluginVersion": "10.1.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(increase(otelcol_rpc_client_duration_bucket{}[$__rate_interval])) by (le)",
+              "format": "heatmap",
+              "hide": false,
+              "instant": false,
+              "interval": "$minstep",
+              "intervalFactor": 1,
+              "legendFormat": "{{le}}",
+              "refId": "B"
+            }
+          ],
+          "title": "RPC client duration (exporters)",
+          "type": "heatmap"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 97
+          },
+          "id": 73,
+          "interval": "$minstep",
+          "links": [],
+          "maxDataPoints": 50,
+          "options": {
+            "calculate": false,
+            "cellGap": 1,
+            "color": {
+              "exponent": 0.5,
+              "fill": "dark-orange",
+              "mode": "scheme",
+              "reverse": true,
+              "scale": "exponential",
+              "scheme": "Reds",
+              "steps": 25
+            },
+            "exemplars": {
+              "color": "rgba(255,0,255,0.7)"
+            },
+            "filterValues": {
+              "le": 0.1
+            },
+            "legend": {
+              "show": true
+            },
+            "rowsFrame": {
+              "layout": "auto"
+            },
+            "tooltip": {
+              "show": true,
+              "showColorScale": false,
+              "yHistogram": false
+            },
+            "yAxis": {
+              "axisPlacement": "left",
+              "reverse": false,
+              "unit": "bytes"
+            }
+          },
+          "pluginVersion": "10.1.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(increase(otelcol_rpc_server_request_size_bucket{}[$__rate_interval])) by (le)",
+              "format": "heatmap",
+              "hide": false,
+              "instant": false,
+              "interval": "$minstep",
+              "intervalFactor": 1,
+              "legendFormat": "{{le}}",
+              "refId": "B"
+            }
+          ],
+          "title": "RPC server request size (receivers)",
+          "type": "heatmap"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 97
+          },
+          "id": 75,
+          "interval": "$minstep",
+          "links": [],
+          "maxDataPoints": 50,
+          "options": {
+            "calculate": false,
+            "cellGap": 1,
+            "color": {
+              "exponent": 0.5,
+              "fill": "dark-orange",
+              "mode": "scheme",
+              "reverse": true,
+              "scale": "exponential",
+              "scheme": "Reds",
+              "steps": 25
+            },
+            "exemplars": {
+              "color": "rgba(255,0,255,0.7)"
+            },
+            "filterValues": {
+              "le": 0.1
+            },
+            "legend": {
+              "show": true
+            },
+            "rowsFrame": {
+              "layout": "auto"
+            },
+            "tooltip": {
+              "show": true,
+              "showColorScale": false,
+              "yHistogram": false
+            },
+            "yAxis": {
+              "axisPlacement": "left",
+              "reverse": false,
+              "unit": "bytes"
+            }
+          },
+          "pluginVersion": "10.1.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "$datasource"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(increase(otelcol_rpc_client_request_size_bucket{}[$__rate_interval])) by (le)",
+              "format": "heatmap",
+              "hide": false,
+              "instant": false,
+              "interval": "$minstep",
+              "intervalFactor": 1,
+              "legendFormat": "{{le}}",
+              "refId": "B"
+            }
+          ],
+          "title": "RPC client request size (exporters)",
+          "type": "heatmap"
         }
       ],
       "title": "RPC server/client",
@@ -5066,6 +5422,6 @@
   "timezone": "",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 81,
+  "version": 82,
   "weekStart": ""
 }
