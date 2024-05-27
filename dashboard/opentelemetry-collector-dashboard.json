@@ -4464,7 +4464,7 @@
               },
               "editorMode": "code",
               "exemplar": true,
-              "expr": "sum(increase(otelcol_rpc_server_duration_bucket{rpc_grpc_status_code=\"8\"}[$__rate_interval])) by (le)",
+              "expr": "sum(increase(otelcol_rpc_server_duration_bucket{}[$__rate_interval])) by (le)",
               "format": "heatmap",
               "hide": false,
               "instant": false,
