@@ -10,8 +10,11 @@ port on a public interface instead of just locally.
 service:
   telemetry:
     metrics:
-      address: 127.0.0.1:8888
-      level: detailed   
+      readers:
+        - pull
+          exporter:
+            prometheus: 127.0.0.1
+            port: 8888 
 ```
 
 Collector can scrape own metric via own metric pipeline, so real configuration 
@@ -45,21 +48,30 @@ service:
     metrics:
       receivers: [prometheus]
       processors: []
-      exporters: [awsprometheusremotewrite]
+      exporters: [prometheusremotewrite/aws]
   telemetry:
     metrics:
-      address: 127.0.0.1:8888
-      level: detailed
+      readers:
+        - pull
+          exporter:
+            prometheus: 127.0.0.1
+            port: 8888
+    logs:
+      encoding: json
+      level: info
 ```
 
 ## Grafana dashboard for OpenTelemetry collector metrics
 
 [![OpenTelemetry collector dashboard](dashboard/opentelemetry-collector-dashboard.png)](https://github.com/monitoringartist/opentelemetry-collector-monitoring/tree/main/dashboard)
 
+This dashboard can also be used for [Grafana Alloy monitoring](doc/grafana-alloy-monitoring.md).
+
 ## Prometheus alerts
 
 Recommended Prometheus alerts for OpenTelemetry collector metrics:
 ```
+# keep in mind that metrics may have "_total" suffixes - check your metrics/configuration first
 groups:
   - name: opentelemetry-collector
     rules:
@@ -79,6 +91,14 @@ groups:
         annotations:
           summary: Some metric points have been dropped by processor
           description: Maybe collector has received non standard metric points or it reached some limits
+      - alert: processor-dropped-logs
+        expr: sum(rate(otelcol_processor_dropped_log_records{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some log records have been dropped by processor
+          description: Maybe collector has received non standard log records or it reached some limits
       - alert: receiver-refused-spans
         expr: sum(rate(otelcol_receiver_refused_spans{}[1m])) > 0
         for: 5m
@@ -95,6 +115,14 @@ groups:
         annotations:
           summary: Some metric points have been refused by receiver
           description: Maybe collector has received non standard metric points or it reached some limits
+      - alert: receiver-refused-logs
+        expr: sum(rate(otelcol_receiver_refused_log_records{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some log records have been refused by receiver
+          description: Maybe collector has received non standard log records or it reached some limits
       - alert: exporter-enqueued-spans
         expr: sum(rate(otelcol_exporter_enqueue_failed_spans{}[1m])) > 0
         for: 5m
@@ -111,6 +139,14 @@ groups:
         annotations:
           summary: Some metric points have been enqueued by exporter
           description: Maybe used destination has a problem or used payload is not correct
+      - alert: exporter-enqueued-logs
+        expr: sum(rate(otelcol_exporter_enqueue_failed_log_records{}[1m])) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some log records have been enqueued by exporter
+          description: Maybe used destination has a problem or used payload is not correct
       - alert: exporter-failed-requests
         expr: sum(rate(otelcol_exporter_send_failed_requests{}[1m])) > 0
         for: 5m
@@ -126,7 +162,7 @@ groups:
           severity: critical
         annotations:
           summary: High max CPU usage
-          description: Collector need to scale up
+          description: Collector needs to scale up
 ```
 
 ## Documentation
