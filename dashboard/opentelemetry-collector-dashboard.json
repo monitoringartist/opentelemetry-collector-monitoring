@@ -674,7 +674,7 @@
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Incomming: {{processor}} {{service_instance_id}}",
+          "legendFormat": "Incoming: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -837,7 +837,7 @@
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Incomming: {{processor}} {{service_instance_id}}",
+          "legendFormat": "Incoming: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -1000,7 +1000,7 @@
           "format": "time_series",
           "interval": "$minstep",
           "intervalFactor": 1,
-          "legendFormat": "Incomming: {{processor}} {{service_instance_id}}",
+          "legendFormat": "Incoming: {{processor}} {{service_instance_id}}",
           "range": true,
           "refId": "A"
         },
@@ -6168,7 +6168,7 @@
         },
         "description": "Detailed metrics must be configured in the collector configuration. They add grouping by transport protocol (http/grpc) for receivers. ",
         "includeAll": false,
-        "label": "Additional groupping",
+        "label": "Additional grouping",
         "name": "grouping",
         "options": [
           {
