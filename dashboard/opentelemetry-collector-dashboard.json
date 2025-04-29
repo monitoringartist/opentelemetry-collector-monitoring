@@ -6032,7 +6032,7 @@
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
-        "regex": "/.*{.*job=\"([a-zA-Z0-9_-/]+)\".*}/",
+        "regex": "/.*{.*job=\"([a-zA-Z0-9_\/-]+)\".*}/",
         "sort": 1,
         "type": "query"
       },
