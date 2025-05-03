@@ -1,5 +1,26 @@
 # OpenTelemetry (OTEL) collector monitoring
 
+## Metric name/label name conventions
+
+OpenTelemetry metrics and label names can vary significantly. These variations depend on several factors:
+
+- OpenTelemetry Collector version
+- Specific receivers/exporters in use
+- Receiver/exporter configuration settings
+- Metric storage backend configuration
+
+For example uptime metric can be saved as:
+```
+otelcol_process_uptime{service_instance_id="123456", ...}
+otelcol_process_uptime_total{service_instance_id="123456", ...}
+otelcol_process_uptime_seconds_total{service_instance_id="123456", ...}
+otelcol_process_uptime_seconds_total{service.instance.id="123456", ...}
+otelcol_process_uptime_seconds_total_total{service.instance.id="123456", ...}
+```
+
+This dashboard attempts to detect all these variations through hidden dashboard variables 
+to ensure compatibility across different configurations.
+
 ## Metrics
 
 Collector can expose Prometheus metrics locally on port 8888 and path 
@@ -7,14 +28,35 @@ Collector can expose Prometheus metrics locally on port 8888 and path
 port on a public interface instead of just locally.
 
 ```
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+      - job_name: otel-collector-metrics
+        scrape_interval: 10s
+        static_configs:
+        - targets: ['127.0.0.1:8888']
+
 service:
-  telemetry:
+  pipelines:
     metrics:
+      receivers: [prometheus]
+      processors: []
+      exporters: [...]
+  telemetry:
+    resource:
+      service.name: grafana-opentelemetry/metrics
+    metrics:
+      level: detailed
       readers:
-        - pull
-          exporter:
-            prometheus: 127.0.0.1
-            port: 8888 
+        - pull:
+            exporter:
+              prometheus:
+                host: 127.0.0.1
+                port: 8888
+                with_resource_constant_labels:
+                  included:
+                      - service.name
 ```
 
 Collector can scrape own metric via own metric pipeline, so real configuration 
@@ -50,15 +92,19 @@ service:
       processors: []
       exporters: [prometheusremotewrite/aws]
   telemetry:
+    resource:
+      service.name: grafana-opentelemetry/metrics
     metrics:
+      level: detailed
       readers:
-        - pull
-          exporter:
-            prometheus: 127.0.0.1
-            port: 8888
-    logs:
-      encoding: json
-      level: info
+        - pull:
+            exporter:
+              prometheus:
+                host: 127.0.0.1
+                port: 8888
+                with_resource_constant_labels:
+                  included:
+                      - service.name
 ```
 
 ## Grafana dashboard for OpenTelemetry collector metrics
@@ -71,7 +117,7 @@ This dashboard can also be used for [Grafana Alloy monitoring](doc/grafana-alloy
 
 Recommended Prometheus alerts for OpenTelemetry collector metrics:
 ```
-# keep in mind that metrics may have "_total" suffixes - check your metrics/configuration first
+# keep in mind that metrics may have "_total|seconds_total|seconds_total_total" suffixes - check your metrics/configuration first
 groups:
   - name: opentelemetry-collector
     rules:
@@ -165,7 +211,9 @@ groups:
           description: Collector needs to scale up
 ```
 
+Example of alert rules provided as a opentelemetry collector part of helm chart: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/templates/prometheusrule.yaml
+
 ## Documentation
 
-- https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/monitoring.md
-- https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md#metrics
+- https://opentelemetry.io/docs/collector/internal-telemetry/
+- https://opentelemetry.io/docs/collector/troubleshooting/
