@@ -6183,11 +6183,16 @@
           },
           {
             "selected": false,
-            "text": "By service instance id",
+            "text": "By service_instance_id",
             "value": ",service_instance_id"
+          },
+          {
+            "selected": false,
+            "text": "By service.instance.id",
+            "value": ",service.instance.id"
           }
         ],
-        "query": "None (basic metrics) :  , By transport (detailed metrics) : \\,transport, By service instance id : \\,service_instance_id",
+        "query": "None (basic metrics) :  , By transport (detailed metrics) : \\,transport, By service_instance_id : \\,service_instance_id, By service.instance.id : \\,service.instance.id",
         "type": "custom"
       },
       {
@@ -6209,7 +6214,7 @@
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
-        "regex": "/.*(_total)+{.*/",
+        "regex": "/(_total_total|_total)(?={)/",
         "type": "query"
       },
       {
