@@ -2,7 +2,7 @@
 
 ## Metric name/label name conventions
 
-OpenTelemetry metrics and label names can vary significantly. These variations depend on several factors:
+OpenTelemetry collector metrics and label names can vary significantly. These variations depend on several factors:
 
 - OpenTelemetry Collector version
 - Specific receivers/exporters in use
