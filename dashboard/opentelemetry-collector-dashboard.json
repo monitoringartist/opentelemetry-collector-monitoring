@@ -6,7 +6,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "13.2.0"
+      "version": "13.2.2"
     },
     {
       "type": "panel",
@@ -24,7 +24,7 @@
       "type": "datasource",
       "id": "prometheus",
       "name": "Prometheus",
-      "version": "13.1.5"
+      "version": "13.2.1"
     },
     {
       "type": "panel",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.156.0)",
+  "description": "Visualize OpenTelemetry (OTEL) collector metrics (tested with OTEL contrib v0.161.0)",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -200,7 +200,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -350,7 +350,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -500,7 +500,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -679,7 +679,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -846,7 +846,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1013,7 +1013,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1182,7 +1182,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1411,7 +1411,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1640,7 +1640,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1789,6 +1789,7 @@
           "le": 1e-9
         },
         "legend": {
+          "placement": "bottom",
           "show": true
         },
         "rowsFrame": {
@@ -1804,7 +1805,7 @@
           "reverse": false
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -1931,7 +1932,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2074,7 +2075,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2236,7 +2237,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2401,7 +2402,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2566,7 +2567,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2709,7 +2710,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2822,7 +2823,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -2935,7 +2936,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -3132,7 +3133,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -3347,7 +3348,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -3562,7 +3563,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -3773,7 +3774,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -3919,7 +3920,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4033,7 +4034,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4104,7 +4105,7 @@
         "cellHeight": "sm",
         "showHeader": true
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4113,7 +4114,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "max(otelcol_process_uptime${suffix_seconds}${suffix_total}{\"service${divider:raw}instance${divider:raw}id\"=~\".*\",job=\"$job\",\"service${divider:raw}version\"=\".+\"}) by (\"service${divider:raw}instance${divider:raw}id\",\"service${divider:raw}name\",\"service${divider:raw}version\")\r\nor\r\nmax(\r\n  otelcol_process_uptime${suffix_seconds}${suffix_total}{\"service${divider:raw}instance${divider:raw}id\"=~\".*\",job=\"$job\"} \r\n  * on(job, instance) \r\n  group_left(\"service${divider:raw}version\") \r\n  (\r\n    target_info \r\n    * on(job, instance) \r\n    group_left \r\n    label_replace(target_info{}, \"service${divider:raw}instance${divider:raw}id\", \"$1\", \"instance\", \"(.*)\")\r\n  )\r\n) by (\"service${divider:raw}instance${divider:raw}id\", \"service${divider:raw}name\", \"service${divider:raw}version\")",
+          "expr": "max(otelcol_process_uptime${suffix_seconds}${suffix_total}{\"service${divider:raw}instance${divider:raw}id\"=~\".*\",job=\"$job\",\"service${divider:raw}version\"=\".+\"}) by (\"service${divider:raw}instance${divider:raw}id\",\"service${divider:raw}name\",\"service${divider:raw}version\")\r\nor\r\nmax(\r\n  otelcol_process_uptime${suffix_seconds}${suffix_total}{\"service${divider:raw}instance${divider:raw}id\"=~\".*\",job=\"$job\"} \r\n  * on(job, instance) \r\n  group_left(\"service${divider:raw}version\") \r\n  topk by (job, instance) (1,\r\n    target_info{job=\"$job\"} \r\n    * on(job, instance) \r\n    group_left \r\n    label_replace(topk by (job, instance) (1, target_info{job=\"$job\"}), \"service${divider:raw}instance${divider:raw}id\", \"$1\", \"instance\", \"(.*)\")\r\n  )\r\n) by (\"service${divider:raw}instance${divider:raw}id\", \"service${divider:raw}name\", \"service${divider:raw}version\")",
           "format": "table",
           "instant": true,
           "interval": "$minstep",
@@ -4172,7 +4173,7 @@
         },
         "zoomMode": "cooperative"
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4181,7 +4182,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_receiver_accepted_spans${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver)\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate(otelcol_process_uptime${suffix_seconds}${suffix_total}{job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_exporter_sent_spans${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter)\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
+          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_receiver_accepted_spans${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver)\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate({__name__=~\"otelcol_process_uptime.*\", job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_exporter_sent_spans${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter)\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
           "format": "table",
           "instant": true,
           "legendFormat": "__auto",
@@ -4250,7 +4251,7 @@
         },
         "zoomMode": "cooperative"
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4259,7 +4260,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      (sum(\n        ${metric:value}(otelcol_receiver_accepted_metric_points${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver))\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate(otelcol_process_uptime${suffix_seconds}${suffix_total}{job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      (sum(\n        ${metric:value}(otelcol_exporter_sent_metric_points${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter))\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
+          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      (sum(\n        ${metric:value}(otelcol_receiver_accepted_metric_points${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver))\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate({__name__=~\"otelcol_process_uptime.*\", job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      (sum(\n        ${metric:value}(otelcol_exporter_sent_metric_points${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter))\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
           "format": "table",
           "instant": true,
           "legendFormat": "__auto",
@@ -4328,7 +4329,7 @@
         },
         "zoomMode": "cooperative"
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "targets": [
         {
           "datasource": {
@@ -4337,7 +4338,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_receiver_accepted_log_records${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver)\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate(otelcol_process_uptime${suffix_seconds}${suffix_total}{job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_exporter_sent_log_records${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter)\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
+          "expr": "# receivers\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_receiver_accepted_log_records${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (receiver)\n      , \"id\", \"-rcv-\", \"transport\", \"receiver\"\n    )\n    , \"title\", \"\", \"transport\", \"receiver\"\n  )\n  , \"icon\", \"arrow-to-right\", \"\", \"\"\n)\n\n# dummy processor\nor\nlabel_replace(\n  label_replace(\n    label_replace(\n      (sum(rate({__name__=~\"otelcol_process_uptime.*\", job=\"$job\"}[$__rate_interval])))\n      , \"id\", \"processor\", \"\", \"\"\n    )\n    , \"title\", \"Processor(s)\", \"\", \"\"\n  )\n  , \"icon\", \"arrow-random\", \"\", \"\"\n)\n\n# exporters\nor\nlabel_replace(\n  label_join(\n    label_join(\n      sum(${metric:value}(\n        otelcol_exporter_sent_log_records${suffix_total}{job=\"$job\"}[$__rate_interval])\n      ) by (exporter)\n      , \"id\", \"-exp-\", \"transport\", \"exporter\"\n    )\n    , \"title\", \"\", \"transport\", \"exporter\"\n  )\n  , \"icon\", \"arrow-from-right\", \"\", \"\"\n)",
           "format": "table",
           "instant": true,
           "legendFormat": "__auto",
@@ -4616,21 +4617,6 @@
               "legendFormat": "Filtered: {{filter}} {{transport}} {{service_instance_id}}{{service.instance.id}}",
               "range": true,
               "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${datasource}"
-              },
-              "editorMode": "code",
-              "exemplar": false,
-              "expr": "sum(${metric:value}(otelcol_processor_filter_datapoints_filtered${suffix_total}{job=\"$job\"}[$__rate_interval])) by (filter $grouping)\r\nsum(${metric:value}(otelcol_processor_filter_logs_filtered${suffix_total}{job=\"$job\"}[$__rate_interval])) by (filter $grouping)",
-              "format": "time_series",
-              "interval": "$minstep",
-              "intervalFactor": 1,
-              "legendFormat": "Filtered: {{filter}} {{transport}} {{service_instance_id}}{{service.instance.id}}",
-              "range": true,
-              "refId": "B"
             }
           ],
           "title": "Metric Points ${metric:text}",
@@ -6276,7 +6262,7 @@
         "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/troubleshooting/\">OTEL collector troubleshooting (how to enable telemetry metrics)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/scaling/\">Scaling the Collector (metrics to watch)</a> | \n<a target=\"_blank\" href=\"https://opentelemetry.io/docs/collector/internal-telemetry/\">Collector internal telemetry</a> | \n<a target=\"_blank\" href=\"https://www.otelbin.io/\">OTelBin (OpenTelemetry collector configuration tool)</a> | \n<a target=\"_blank\" href=\"https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/\">Installed from Grafana.com dashboards</a>",
         "mode": "html"
       },
-      "pluginVersion": "13.2.0",
+      "pluginVersion": "13.2.2",
       "title": "Documentation",
       "type": "text"
     }
@@ -6650,7 +6636,6 @@
   "timezone": "browser",
   "title": "OpenTelemetry Collector",
   "uid": "BKf2sowmj",
-  "version": 87,
+  "version": 88,
   "weekStart": ""
 }
-
